@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-Foto/Pods-Foto-frameworks.sh
+${BUILT_PRODUCTS_DIR}/AMDots/AMDots.framework
+${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework
+${BUILT_PRODUCTS_DIR}/PasswordTextField/PasswordTextField.framework
