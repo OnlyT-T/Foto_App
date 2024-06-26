@@ -22,7 +22,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = navi
         window?.makeKeyAndVisible()
     }
-    
 
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -56,6 +55,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
 
-
 }
 
+extension SceneDelegate: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        print("Selected Tab : \(tabBarController.selectedIndex)")
+    }
+}

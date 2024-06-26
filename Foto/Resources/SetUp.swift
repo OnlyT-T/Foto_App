@@ -56,7 +56,6 @@ public func setUpFinal(button: UIButton, border: UIView, avatar: UIImageView) {
 }
 
 public func showLoading(isShow: Bool, view: UIView) {
-    
     if isShow {
         MBProgressHUD.showAdded(to: view, animated: true)
     } else {

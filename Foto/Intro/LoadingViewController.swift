@@ -52,7 +52,7 @@ class LoadingViewController: UIViewController {
         if Auth.auth().currentUser != nil {
             /// Login rồi
             self.showLoading(isShow: false)
-            routeToMain()
+            routeToTabbar()
         } else {
             /// Chưa login
             self.showLoading(isShow: false)
@@ -67,16 +67,40 @@ class LoadingViewController: UIViewController {
         self.navigationController?.pushViewController(welcomeVC, animated: true)
         self.navigationController?.isNavigationBarHidden = true
         
+        window?.rootViewController = welcomeVC
         window?.makeKeyAndVisible()
     }
     
-    private func routeToMain() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let homeVC = storyboard.instantiateViewController(withIdentifier: "HomeVC")
+    private func routeToTabbar() {
+        //Photos
+        let photosVC = PhotosVC()
+        let photosNavi = UINavigationController(rootViewController: photosVC)
+        photosVC.tabBarItem = UITabBarItem(title: "Photos", image: UIImage(named: "Photos(Unselected)"), selectedImage: UIImage(named: "Photos(Selected)"))
         
-        self.navigationController?.pushViewController(homeVC, animated: true)
-        self.navigationController?.isNavigationBarHidden = true
+        //Camera
+        let cameraVC = CameraVC()
+        let cameraNavi = UINavigationController(rootViewController: cameraVC)
+        cameraVC.tabBarItem = UITabBarItem(title: "Camera", image: UIImage(named: "Camera(Unselected)"), selectedImage: UIImage(named: "Camera(Selected)"))
+        
+        //Profile
+        let profileVC = ProfileVC()
+        let profileNavi = UINavigationController(rootViewController: profileVC)
+        profileVC.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(named: "Profile(Unselected)"), selectedImage: UIImage(named: "Profile(Selected)"))
         
         window?.makeKeyAndVisible()
+        
+        //tabbar controller
+        let tabbarController = UITabBarController()
+        tabbarController.viewControllers = [photosNavi, cameraNavi, profileNavi]
+        tabbarController.tabBar.tintColor = #colorLiteral(red: 0.4432783723, green: 0.3698398471, blue: 0.9178406596, alpha: 1)
+        tabbarController.tabBar.backgroundColor = UIColor.white
+        let lineView = UIView(frame: CGRect(x: 0, y: -16, width: tabbarController.tabBar.frame.size.width, height: 16))
+        lineView.backgroundColor = UIColor.white
+        tabbarController.tabBar.addSubview(lineView)
+        
+        self.navigationController?.pushViewController(tabbarController, animated: true)
+        self.navigationController?.isNavigationBarHidden = true
+                
+        window?.rootViewController = tabbarController
     }
 }
