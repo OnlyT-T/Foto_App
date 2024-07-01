@@ -45,32 +45,27 @@ class NicknameVC: UIViewController {
         
         showLoading(isShow: true, view: view)
         
-        var ref: DocumentReference? = nil
-        ref = db.collection("user").addDocument(data: [
+        db.collection("user").document(uid).setData([
             "email": email,
             "nickname": nickname,
             "uid": uid
-        ]) { err in
-            if let err = err {
-                print("Error Adding Doc: \(err)")
-            } else {
-                print("Document added with ID: \(ref!.documentID)")
-                
-                showLoading(isShow: false, view: self.view)
-                
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                
-                let avatarVC = storyboard.instantiateViewController(withIdentifier: "AvatarVC") as! AvatarVC
-                
-                avatarVC.receivedData = ref!.documentID
-                
-                self.navigationController?.pushViewController(avatarVC, animated: true)
-                
-                self.navigationController?.isNavigationBarHidden = true
-            }
-        }
-        
-   
+          ]) { err in
+              if let err = err {
+                  print("Error Adding Doc: \(err)")
+              } else {
+                  print("Document added successfully!!!")
+                  
+                  showLoading(isShow: false, view: self.view)
+                  
+                  let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                  
+                  let avatarVC = storyboard.instantiateViewController(withIdentifier: "AvatarVC") as! AvatarVC
+                  
+                  self.navigationController?.pushViewController(avatarVC, animated: true)
+                  
+                  self.navigationController?.isNavigationBarHidden = true
+              }
+          }
     }
     
     @IBAction func actionTapped(_ sender: UIButton) {
@@ -89,6 +84,4 @@ class NicknameVC: UIViewController {
     @IBAction func handleNicknameTF(_ sender: UITextField) {
         print("value: \(sender.text ?? "")")
     }
-    
-    
 }

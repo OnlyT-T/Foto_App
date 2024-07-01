@@ -122,3 +122,27 @@ public func getMyInfo(name: UILabel, avatar: UIImageView, view: UIView) {
     
     showLoading(isShow: false, view: view)
 }
+
+public func getConvoID(id: UILabel) {
+    let db = Firestore.firestore()
+    
+    guard let uid = Auth.auth().currentUser?.uid else {
+        print("ERROR UID")
+        return
+    }
+    
+    let docRef = db.collection("user").document(uid)
+    docRef.getDocument { snapshot, error in
+        guard let data = snapshot?.data(), error == nil else {
+            print("Error Data")
+            return
+        }
+        
+        guard let convoId = data["Conversation ID"] as? String else {
+            print("ERROR Conversation ID")
+            return
+        }
+        
+        id.text = convoId
+    }
+}

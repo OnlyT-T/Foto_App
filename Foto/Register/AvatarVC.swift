@@ -23,9 +23,7 @@ class AvatarVC: UIViewController {
     @IBOutlet weak var avatarBorder: UIView!
     
     @IBOutlet weak var backBt: UIButton!
-    
-    var receivedData: String?
-    
+        
     var imagePicker: UIImagePickerController!
     
     let storage = Storage.storage()
@@ -97,9 +95,7 @@ class AvatarVC: UIViewController {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 
                 let connectVC = storyboard.instantiateViewController(withIdentifier: "ConnectVC") as! ConnectVC
-                
-                connectVC.getDocumentID = receivedData
-                
+                                
                 self.navigationController?.pushViewController(connectVC, animated: true)
                 
                 self.navigationController?.isNavigationBarHidden = true
@@ -158,7 +154,7 @@ class AvatarVC: UIViewController {
     private func fromLibrary(){
         func choosePhoto(){
             DispatchQueue.main.async {
-                self.imagePicker.allowsEditing = false
+                self.imagePicker.allowsEditing = true
                 self.imagePicker.sourceType = .photoLibrary
                 self.imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
                 self.imagePicker.modalPresentationStyle = .popover
@@ -197,7 +193,7 @@ class AvatarVC: UIViewController {
         func takePhoto(){
             if UIImagePickerController.isSourceTypeAvailable(.camera){
                 DispatchQueue.main.async {
-                    self.imagePicker.allowsEditing = false
+                    self.imagePicker.allowsEditing = true
                     self.imagePicker.sourceType = UIImagePickerController.SourceType.camera
                     self.imagePicker.cameraCaptureMode = .photo
                     self.imagePicker.cameraDevice = .front
@@ -229,11 +225,15 @@ class AvatarVC: UIViewController {
 
 extension AvatarVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let selectedImage = info[.originalImage] as? UIImage else {
-            print("error: \(info)")
-            return
+        if let img = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+        {
+            self.avatarImage.image = img
         }
-        self.avatarImage.image = selectedImage
-        dismiss(animated: true, completion: nil)
+        else if let img = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        {
+            self.avatarImage.image = img
+        }
+
+        picker.dismiss(animated: true,completion: nil)
     }
 }

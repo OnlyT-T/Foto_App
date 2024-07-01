@@ -1,22 +1,131 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Rounded-Bold.otf">
+            <string>SFProRounded-Bold</string>
+        </array>
+        <array key="SF-Pro-Rounded-Medium.otf">
+            <string>SFProRounded-Medium</string>
+        </array>
+        <array key="SF-Pro-Rounded-Semibold.otf">
+            <string>SFProRounded-Semibold</string>
+        </array>
+    </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EmailVC" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EmailVC" customModule="Foto" customModuleProvider="target">
             <connections>
+                <outlet property="confirmBt" destination="0Rt-U4-tuS" id="zjW-zW-7lA"/>
+                <outlet property="emailBorder" destination="Nfv-ft-26n" id="u1v-lF-EYe"/>
+                <outlet property="emailTF" destination="V6h-ai-NhU" id="RPp-sK-pnu"/>
+                <outlet property="scrollView" destination="Ah4-bj-JWf" id="Ou6-BR-BUy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ah4-bj-JWf" customClass="TPKeyboardAvoidingScrollView" customModule="Foto" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAH-aW-FX4" userLabel="Content View">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sPR-m3-LDZ">
+                                    <rect key="frame" x="16" y="580" width="361" height="80"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSP-ES-CmN">
+                                            <rect key="frame" x="4" y="0.0" width="357" height="21"/>
+                                            <fontDescription key="fontDescription" name="SFProRounded-Semibold" family="SF Pro Rounded" pointSize="18"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nfv-ft-26n">
+                                            <rect key="frame" x="0.0" y="26" width="361" height="54"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="V6h-ai-NhU">
+                                                    <rect key="frame" x="2" y="2" width="357" height="50"/>
+                                                    <color key="backgroundColor" red="0.40784313729999999" green="0.4431372549" blue="0.81960784310000001" alpha="0.94999999999999996" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" name="SFProRounded-Medium" family="SF Pro Rounded" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits" textContentType="email"/>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="V6h-ai-NhU" firstAttribute="top" secondItem="Nfv-ft-26n" secondAttribute="top" constant="2" id="RHT-lD-UiF"/>
+                                                <constraint firstItem="V6h-ai-NhU" firstAttribute="leading" secondItem="Nfv-ft-26n" secondAttribute="leading" constant="2" id="c5Y-OK-0bd"/>
+                                                <constraint firstAttribute="trailing" secondItem="V6h-ai-NhU" secondAttribute="trailing" constant="2" id="eeo-Kz-coD"/>
+                                                <constraint firstAttribute="bottom" secondItem="V6h-ai-NhU" secondAttribute="bottom" constant="2" id="uwb-9S-WHL"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Nfv-ft-26n" firstAttribute="leading" secondItem="sPR-m3-LDZ" secondAttribute="leading" id="7EE-6D-gM8"/>
+                                        <constraint firstItem="Nfv-ft-26n" firstAttribute="top" secondItem="LSP-ES-CmN" secondAttribute="bottom" constant="5" id="EHe-XP-lXW"/>
+                                        <constraint firstAttribute="trailing" secondItem="Nfv-ft-26n" secondAttribute="trailing" id="ROW-05-MwF"/>
+                                        <constraint firstItem="LSP-ES-CmN" firstAttribute="leading" secondItem="sPR-m3-LDZ" secondAttribute="leading" constant="4" id="SAi-PF-ZfZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="LSP-ES-CmN" secondAttribute="trailing" id="Ugs-1h-tfc"/>
+                                        <constraint firstAttribute="bottom" secondItem="Nfv-ft-26n" secondAttribute="bottom" id="hx6-g9-UHQ"/>
+                                        <constraint firstItem="LSP-ES-CmN" firstAttribute="top" secondItem="sPR-m3-LDZ" secondAttribute="top" id="tqL-mn-4aR"/>
+                                        <constraint firstAttribute="height" constant="80" id="xSA-1r-Nma"/>
+                                    </constraints>
+                                </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Rt-U4-tuS">
+                                    <rect key="frame" x="16" y="780" width="361" height="56"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="56" id="mdu-yv-fdq"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SFProRounded-Bold" family="SF Pro Rounded" pointSize="16"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Confirm">
+                                        <color key="titleColor" red="0.40784313729999999" green="0.4431372549" blue="0.81960784310000001" alpha="0.95999999999999996" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="actionTapped:" destination="-1" eventType="touchUpInside" id="6s9-tV-iLI"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.40784313729999999" green="0.4431372549" blue="0.81960784310000001" alpha="0.95999999999999996" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstItem="sPR-m3-LDZ" firstAttribute="leading" secondItem="hAH-aW-FX4" secondAttribute="leading" constant="16" id="AGf-5u-Muv"/>
+                                <constraint firstItem="0Rt-U4-tuS" firstAttribute="top" secondItem="sPR-m3-LDZ" secondAttribute="bottom" constant="120" id="KlO-UY-fwy"/>
+                                <constraint firstItem="0Rt-U4-tuS" firstAttribute="leading" secondItem="hAH-aW-FX4" secondAttribute="leading" constant="16" id="Pth-Ae-9Pn"/>
+                                <constraint firstAttribute="bottom" secondItem="0Rt-U4-tuS" secondAttribute="bottom" constant="16" id="QMd-wg-Etz"/>
+                                <constraint firstAttribute="trailing" secondItem="0Rt-U4-tuS" secondAttribute="trailing" constant="16" id="biY-QU-PJg"/>
+                                <constraint firstAttribute="trailing" secondItem="sPR-m3-LDZ" secondAttribute="trailing" constant="16" id="meu-5t-tXb"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="hAH-aW-FX4" secondAttribute="trailing" id="KbZ-Se-83t"/>
+                        <constraint firstItem="hAH-aW-FX4" firstAttribute="top" secondItem="Ah4-bj-JWf" secondAttribute="top" id="PR7-Br-kFY"/>
+                        <constraint firstAttribute="bottom" secondItem="hAH-aW-FX4" secondAttribute="bottom" id="QFc-2n-Ftg"/>
+                        <constraint firstItem="hAH-aW-FX4" firstAttribute="leading" secondItem="Ah4-bj-JWf" secondAttribute="leading" id="VTa-nl-tZ7"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <constraints>
+                <constraint firstItem="Ah4-bj-JWf" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="2go-5c-YZu"/>
+                <constraint firstItem="Ah4-bj-JWf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6KK-Df-Oeo"/>
+                <constraint firstAttribute="bottom" secondItem="Ah4-bj-JWf" secondAttribute="bottom" id="frE-pI-DKP"/>
+                <constraint firstAttribute="trailing" secondItem="Ah4-bj-JWf" secondAttribute="trailing" id="hIk-At-ggU"/>
+                <constraint firstItem="Ah4-bj-JWf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="oMu-oj-uUT"/>
+                <constraint firstItem="hAH-aW-FX4" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="x45-mu-uAB"/>
+                <constraint firstItem="hAH-aW-FX4" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="z5L-2p-nr3"/>
+            </constraints>
+            <point key="canvasLocation" x="117" y="20"/>
         </view>
     </objects>
 </document>

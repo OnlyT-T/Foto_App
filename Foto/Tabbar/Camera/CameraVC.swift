@@ -7,23 +7,23 @@
 
 import UIKit
 
-class CameraVC: UIViewController {
+class CameraVC: UIViewController, UIPopoverPresentationControllerDelegate {
 
+    @IBOutlet weak var cameraBt: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        cameraBt.layer.cornerRadius = cameraBt.frame.size.height/2
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func actionTapped(_ sender: UIButton) {
+        let uploadVC = UploadPhotoVC()
+        uploadVC.modalPresentationStyle = .popover
+        uploadVC.popoverPresentationController?.sourceView = sender
+        uploadVC.popoverPresentationController?.permittedArrowDirections = .up
+        uploadVC.popoverPresentationController?.delegate = self
+        self.present(uploadVC, animated: true, completion: nil)
     }
-    */
-
+    
 }

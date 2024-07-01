@@ -44,16 +44,19 @@ class RegisterPasswordVC: UIViewController {
             
         case backBt:
             print("Back Tapped")
-            
-            let previousVC = (self.navigationController?.viewControllers[2])
-            
-            self.navigationController?.popToViewController(previousVC!, animated: true)
-            
-            self.navigationController?.isNavigationBarHidden = true
+            backToEmailRes()
             
         default:
             break
         }
+    }
+    
+    private func backToEmailRes() {
+        let previousVC = (self.navigationController?.viewControllers[2])
+        
+        self.navigationController?.popToViewController(previousVC!, animated: true)
+        
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     private func handlePasswordRegister() {
@@ -74,9 +77,7 @@ class RegisterPasswordVC: UIViewController {
         
         Auth.auth().createUser(withEmail: email ?? "", password: password) { [weak self] authResult, err in
             guard let self = self else { return }
-            
-            showLoading(isShow: false, view: view)
-            
+                        
             /// success
             guard err == nil else {
                 /// Cach xử lý custom error.
@@ -93,22 +94,17 @@ class RegisterPasswordVC: UIViewController {
                 /// Khi lỗi xảy ra thì show alert lỗi.
                 let alert = UIAlertController(title: "Lỗi", message: message, preferredStyle: .alert)
                 
-                let okAction = UIAlertAction(title: "Ok", style: .default)
+                let okAction = UIAlertAction(title: "Ok", style: .default) { (action) in
+                    self.backToEmailRes()
+                }
                 
                 alert.addAction(okAction)
+                
+                showLoading(isShow: false, view: self.view)
                 
                 self.present(alert, animated: true)
                 return
             }
-            
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            
-            let nicknameVC = storyboard.instantiateViewController(withIdentifier: "NicknameVC") as! NicknameVC
-            
-            nicknameVC.getEmail = email
-            nicknameVC.getPassword = password
-            
-            self.navigationController?.pushViewController(nicknameVC, animated: true)
             
             self.navigationController?.isNavigationBarHidden = true
         }

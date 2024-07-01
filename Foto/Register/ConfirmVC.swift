@@ -10,6 +10,8 @@ import FirebaseAuth
 import FirebaseFirestore
 import FirebaseDatabase
 import FirebaseStorage
+import FirebaseFirestoreInternal
+import FirebaseDatabaseInternal
 
 class ConfirmVC: UIViewController {
     
@@ -27,18 +29,18 @@ class ConfirmVC: UIViewController {
     
     var senderID: String?
     
-    var receivedDocID: String?
+    var receivedMyCode: String?
     
     var getMessageID: String?
-    
-    var selfDocID: String?
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUpConfirm(button1: disallowBt, button2: allowBt, border: avatarBorder, avatar: partnerAvatar)
         
         getPartnerProfile()
+        
+        // Tự động gửi tín hiệu về cho thiết bị gửi code
         sendingRes()
     }
     
@@ -48,8 +50,9 @@ class ConfirmVC: UIViewController {
             return
         }
         
-        let messID = getMessageID ?? ""
         let userID = senderID ?? ""
+        
+        let myCode = receivedMyCode ?? ""
         
         let databaseRef = Database.database().reference().child("response_1")
         
@@ -57,21 +60,18 @@ class ConfirmVC: UIViewController {
             return
         }
         
-        let message: [String: Any] = ["content": "Confirmation to \(userID)",
+        let message: [String: Any] = ["content": "Have received code from \(userID)",
                                       "sender": uid,
                                       "timestamp": ServerValue.timestamp()]
         
-        databaseRef.child(messageId).setValue(message)
+        databaseRef.child(myCode).child(messageId).setValue(message)
     }
     
     func getPartnerProfile() {
         let userID = senderID ?? ""
-        let docID = receivedDocID ?? ""
-        
         print("User ID: \(userID)")
-        print("Firestore Document ID: \(docID)")
                 
-        let docRef = db.collection("user").document(docID)
+        let docRef = db.collection("user").document(userID)
         docRef.getDocument { [weak self] snapshot, error in
             guard let data = snapshot?.data(), error == nil else {
                 print("Error!!!")
@@ -158,21 +158,27 @@ class ConfirmVC: UIViewController {
             
             showLoading(isShow: true, view: view)
 
-            let docID = selfDocID ?? ""
             let userID = senderID ?? ""
             
-            let databaseRef = Database.database().reference().child("response_2")
+            let databaseRef1 = Database.database().reference().child("response_2")
             
-            guard let messageId = databaseRef.childByAutoId().key else {
+            guard let messageId = databaseRef1.childByAutoId().key else {
+                return
+            }
+            
+            let databaseRef2 = Database.database().reference().child("fotos")
+
+            guard let conversationId = databaseRef2.childByAutoId().key else {
                 return
             }
             
             let message: [String: Any] = ["content": "Yes to \(userID)",
                                           "sender": uid,
-                                          "documentID": docID,
+                                          "messageID": messageId,
+                                          "conversationID": conversationId,
                                           "timestamp": ServerValue.timestamp()]
             
-            databaseRef.child(messageId).setValue(message)
+            databaseRef1.child(messageId).setValue(message)
             
             showLoading(isShow: false, view: view)
             
@@ -182,8 +188,8 @@ class ConfirmVC: UIViewController {
             
             finalVC1.getNickname = partnerNameLb.text
             finalVC1.getPartnerAvatar = partnerAvatar.image
-            finalVC1.selfDocID = docID
             finalVC1.partnerID = userID
+            finalVC1.getConvoID = conversationId
             
             self.navigationController?.pushViewController(finalVC1, animated: true)
             

@@ -6,24 +6,50 @@
 //
 
 import UIKit
+import PasswordTextField
+import FirebaseAuth
 
 class PasswordVC: UIViewController {
+    
+    @IBOutlet weak var firstPasswordTF: PasswordTextField!
+    
+    @IBOutlet weak var secondPasswordTF: PasswordTextField!
+    
+    @IBOutlet weak var firstPasswordBorder: UIView!
+    
+    @IBOutlet weak var secondPasswordBorder: UIView!
 
+    @IBOutlet weak var confirmBt: UIButton!
+    
+    @IBOutlet weak var scrollView: TPKeyboardAvoidingScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setUp()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        firstPasswordTF.becomeFirstResponder()
     }
-    */
-
+    
+    private func setUp() {
+        firstPasswordTF.layer.cornerRadius = 18.0
+        firstPasswordBorder.layer.cornerRadius = 20.0
+        
+        secondPasswordTF.layer.cornerRadius = 18.0
+        secondPasswordBorder.layer.cornerRadius = 20.0
+        
+        confirmBt.layer.cornerRadius = confirmBt.frame.size.height/2
+        
+        scrollView.isScrollEnabled = false
+        scrollView.showsHorizontalScrollIndicator = false
+    }
+    
+    @IBAction func actionTapped(_ sender: UIButton) {
+        print("Tap Tap Password")
+    }
+    
 }

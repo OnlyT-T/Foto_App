@@ -93,6 +93,7 @@ class LoadingViewController: UIViewController {
         let tabbarController = UITabBarController()
         tabbarController.viewControllers = [photosNavi, cameraNavi, profileNavi]
         tabbarController.tabBar.tintColor = #colorLiteral(red: 0.4432783723, green: 0.3698398471, blue: 0.9178406596, alpha: 1)
+        UITabBar.appearance().unselectedItemTintColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
         tabbarController.tabBar.backgroundColor = UIColor.white
         let lineView = UIView(frame: CGRect(x: 0, y: -16, width: tabbarController.tabBar.frame.size.width, height: 16))
         lineView.backgroundColor = UIColor.white

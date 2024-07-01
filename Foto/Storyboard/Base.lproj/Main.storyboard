@@ -186,7 +186,8 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="56" id="NX6-fi-Cnl"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="20"/>
+                                                <color key="textColor" red="0.1333333333" green="0.1647058824" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8OM-Eq-dmn">
@@ -296,6 +297,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="56" id="vfQ-pK-pub"/>
                                                 </constraints>
+                                                <color key="textColor" red="0.1333333333" green="0.1647058824" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
@@ -396,13 +398,14 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="56" id="wKq-nZ-P6Q"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="20"/>
+                                                <color key="textColor" red="0.1333333333" green="0.1647058824" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="customShowSecureTextImage" value="Eye(on)"/>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="customHideSecureTextImage" value="Eye(off)"/>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="imageTintColor">
-                                                        <color key="value" red="0.43137254899999999" green="0.37254901959999998" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="value" red="0.1333333333" green="0.1647058824" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="showToggleButtonWhile" value="Always"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -539,7 +542,7 @@
                                                     <userDefinedRuntimeAttribute type="image" keyPath="customHideSecureTextImage" value="Eye(off)"/>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="showToggleButtonWhile" value="Always"/>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="imageTintColor">
-                                                        <color key="value" red="0.43137254899999999" green="0.37254901959999998" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="value" red="0.1333333333" green="0.1647058824" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -648,6 +651,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="56" id="gZb-MN-9nE"/>
                                                 </constraints>
+                                                <color key="textColor" red="0.1333333333" green="0.1647058824" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
@@ -739,6 +743,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="56" id="KdK-YU-YcT"/>
                                                 </constraints>
+                                                <color key="textColor" red="0.1333333333" green="0.1647058824" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
                                                 <connections>

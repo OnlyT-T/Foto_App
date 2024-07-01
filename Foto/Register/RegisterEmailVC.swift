@@ -8,10 +8,6 @@
 import UIKit
 import FirebaseAuth
 
-//protocol RegisterEmail {
-//    func handleEmailRegister()
-//}
-
 class RegisterEmailVC: UIViewController {
 
     @IBOutlet weak var backBt: UIButton!
@@ -21,9 +17,7 @@ class RegisterEmailVC: UIViewController {
     @IBOutlet weak var nextBt: UIButton!
     
     @IBOutlet weak var scrollView: TPKeyboardAvoidingScrollView!
-    
-//    var email: String?
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,7 +31,6 @@ class RegisterEmailVC: UIViewController {
     }
     
     @IBAction func actionTapped(_ sender: UIButton) {
-        
         switch sender {
         case nextBt:
             print("Next Tapped")
@@ -69,12 +62,9 @@ class RegisterEmailVC: UIViewController {
         self.navigationController?.pushViewController(passwordVC, animated: true)
         
         self.navigationController?.isNavigationBarHidden = true
-
     }
     
     @IBAction func handleTFChange(_ sender: UITextField) {
         print("value: \(sender.text ?? "")")
-        
     }
-    
 }
