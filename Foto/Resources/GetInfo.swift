@@ -146,3 +146,27 @@ public func getConvoID(id: UILabel) {
         id.text = convoId
     }
 }
+
+public func getAnniDate(date: UILabel) {
+    let db = Firestore.firestore()
+    
+    guard let uid = Auth.auth().currentUser?.uid else {
+        print("ERROR UID")
+        return
+    }
+    
+    let docRef = db.collection("user").document(uid)
+    docRef.getDocument { snapshot, error in
+        guard let data = snapshot?.data(), error == nil else {
+            print("Error Data")
+            return
+        }
+        
+        guard let anniDate = data["Anniversary"] as? String else {
+            print("ERROR Anni")
+            return
+        }
+        
+        date.text = "Anniversary: \(anniDate)"
+    }
+}

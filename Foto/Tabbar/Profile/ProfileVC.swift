@@ -95,7 +95,7 @@ class ProfileVC: UIViewController, UIPopoverPresentationControllerDelegate {
         } catch let signOutError as NSError {
             let alert = UIAlertController(title: "Lỗi", message: signOutError.localizedDescription, preferredStyle: .alert)
             
-            let okAction = UIAlertAction(title: "Ok", style: .default)
+            let okAction = UIAlertAction(title: "OK", style: .default)
             
             alert.addAction(okAction)
             
@@ -203,44 +203,30 @@ class ProfileVC: UIViewController, UIPopoverPresentationControllerDelegate {
             emailVC.popoverPresentationController?.delegate = self
             self.present(emailVC, animated: true, completion: nil)
             
-//            let alert = UIAlertController(title: "SORRY", message: "This function is still in progress.", preferredStyle: .alert)
-//            
-//            let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-//            
-//            alert.addAction(button)
-//            self.present(alert, animated: true, completion: nil)
-            
         case passwordChangeBt:
             print("Changing Password!")
             
-//            let passwordVC = PasswordVC()
-//            passwordVC.modalPresentationStyle = .popover
-//            passwordVC.popoverPresentationController?.sourceView = sender
-//            passwordVC.popoverPresentationController?.permittedArrowDirections = .up
-//            passwordVC.popoverPresentationController?.delegate = self
-//            self.present(passwordVC, animated: true, completion: nil)
-            
-            let alert = UIAlertController(title: "Sorry...", message: "This function is still in progress.", preferredStyle: .alert)
-            
-            let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            
-            alert.addAction(button)
-            self.present(alert, animated: true, completion: nil)
+            let passwordVC = PasswordVC()
+            passwordVC.modalPresentationStyle = .popover
+            passwordVC.popoverPresentationController?.sourceView = sender
+            passwordVC.popoverPresentationController?.permittedArrowDirections = .up
+            passwordVC.popoverPresentationController?.delegate = self
+            self.present(passwordVC, animated: true, completion: nil)
             
         case anniChangeBt:
             print("Changing Anniversary!")
             
-            let alert = UIAlertController(title: "Sorry...", message: "This function is still in progress.", preferredStyle: .alert)
-            
-            let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            
-            alert.addAction(button)
-            self.present(alert, animated: true, completion: nil)
-            
+            let anniVC = AnniVC()
+            anniVC.modalPresentationStyle = .custom
+            anniVC.modalTransitionStyle = .crossDissolve
+            anniVC.popoverPresentationController?.sourceView = sender
+            anniVC.popoverPresentationController?.delegate = self
+            self.present(anniVC, animated: true, completion: nil)
+
         case replaceBt:
             print("Changing Partner!")
             
-            let alert = UIAlertController(title: "Sorry...", message: "This function is still in progress.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Thông báo", message: "Tính năng đang được phát triển. Xin vui lòng thử lại sau.", preferredStyle: .alert)
             
             let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             
@@ -250,13 +236,13 @@ class ProfileVC: UIViewController, UIPopoverPresentationControllerDelegate {
         case logOutBt:
             print("Log Out Tapped!!!")
             
-            let alert = UIAlertController(title: "Log out of your account?", message: nil, preferredStyle: .alert)
+            let alert = UIAlertController(title: "Bạn muốn đăng xuất khỏi account này?", message: nil, preferredStyle: .alert)
             
-            let yesAction = UIAlertAction(title: "Log Out", style: .destructive) { (action) in
+            let yesAction = UIAlertAction(title: "Đăng xuất", style: .destructive) { (action) in
                 self.handleLogout()
             }
             
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            let cancelAction = UIAlertAction(title: "Huỷ", style: .cancel, handler: nil)
             
             alert.addAction(cancelAction)
             alert.addAction(yesAction)

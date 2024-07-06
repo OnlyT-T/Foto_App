@@ -32,10 +32,6 @@ class MyFotosCell: UICollectionViewCell {
     private func setUp() {
         fotoView.layer.cornerRadius = 10
         fotoView.layer.masksToBounds = false
-//        fotoView.layer.shadowColor = #colorLiteral(red: 0.4432783723, green: 0.3698398471, blue: 0.9178406596, alpha: 1)
-//        fotoView.layer.shadowOpacity = 0.25
-//        fotoView.layer.shadowOffset = .zero
-//        fotoView.layer.shadowRadius = 100
         
         fotoImage.layer.cornerRadius = 12
         fotoImage.layer.masksToBounds = true

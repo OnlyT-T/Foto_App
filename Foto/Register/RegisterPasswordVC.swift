@@ -108,6 +108,18 @@ class RegisterPasswordVC: UIViewController {
             
             self.navigationController?.isNavigationBarHidden = true
         }
+        
+        showLoading(isShow: false, view: self.view)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let nicknameVC = storyboard.instantiateViewController(withIdentifier: "NicknameVC") as! NicknameVC
+        
+        nicknameVC.getEmail = email
+                
+        self.navigationController?.pushViewController(nicknameVC, animated: true)
+        
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     @IBAction func handleTFChange(_ sender: UITextField) {

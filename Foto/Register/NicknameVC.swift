@@ -19,7 +19,6 @@ class NicknameVC: UIViewController {
     @IBOutlet weak var scrollView: TPKeyboardAvoidingScrollView!
     
     var getEmail: String?
-    var getPassword: String?
     
     let db = Firestore.firestore()
     

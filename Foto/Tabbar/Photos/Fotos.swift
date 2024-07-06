@@ -16,11 +16,11 @@ final class Fotos {
     var id: String
     var image: String
     var caption: String
-    var date: String
+    var date: TimeInterval
     var fotoId: String
     var interact: String
     
-    init(id: String, image: String, caption: String, date: String, fotoId: String, interact: String) {
+    init(id: String, image: String, caption: String, date: TimeInterval, fotoId: String, interact: String) {
         self.id = id
         self.image = image
         self.caption = caption
@@ -57,12 +57,12 @@ extension Fotos {
                     let senderId = messageData["sender id"] as? String ?? "No ID"
                     let caption = messageData["caption"] as? String ?? "No Caption"
                     let image = messageData["image name"] as? String ?? "No Image Name"
-                    let time = messageData["time sent"] as? String ?? "No Specific Time"
+                    let time = messageData["time sent"] as? Date ?? Date(timeIntervalSince1970: 0)
                     let fotoId = messageData["foto id"] as? String ?? "No Foto ID"
                     let interact = messageData["liked"] as? String ?? ""
-                    _ = messageData["timestamp"] as? TimeInterval ?? 0
+                    let timestamp = messageData["timestamp"] as? TimeInterval ?? 0
                     
-                    let foto = Fotos(id: senderId, image: image, caption: caption, date: time, fotoId: fotoId, interact: interact)
+                    let foto = Fotos(id: senderId, image: image, caption: caption, date: timestamp, fotoId: fotoId, interact: interact)
                     fotos.append(foto)
                 }
                 completion(fotos)

@@ -75,12 +75,12 @@ class LoadingViewController: UIViewController {
         //Photos
         let photosVC = PhotosVC()
         let photosNavi = UINavigationController(rootViewController: photosVC)
-        photosVC.tabBarItem = UITabBarItem(title: "Photos", image: UIImage(named: "Photos(Unselected)"), selectedImage: UIImage(named: "Photos(Selected)"))
+        photosVC.tabBarItem = UITabBarItem(title: "Fotos", image: UIImage(named: "Photos(Unselected)"), selectedImage: UIImage(named: "Photos(Selected)"))
         
         //Camera
-        let cameraVC = CameraVC()
-        let cameraNavi = UINavigationController(rootViewController: cameraVC)
-        cameraVC.tabBarItem = UITabBarItem(title: "Camera", image: UIImage(named: "Camera(Unselected)"), selectedImage: UIImage(named: "Camera(Selected)"))
+        let previewVC = PreviewVC()
+        let previewNavi = UINavigationController(rootViewController: previewVC)
+        previewVC.tabBarItem = UITabBarItem(title: "Camera", image: UIImage(named: "Camera(Unselected)"), selectedImage: UIImage(named: "Camera(Selected)"))
         
         //Profile
         let profileVC = ProfileVC()
@@ -91,7 +91,7 @@ class LoadingViewController: UIViewController {
         
         //tabbar controller
         let tabbarController = UITabBarController()
-        tabbarController.viewControllers = [photosNavi, cameraNavi, profileNavi]
+        tabbarController.viewControllers = [photosNavi, previewNavi, profileNavi]
         tabbarController.tabBar.tintColor = #colorLiteral(red: 0.4432783723, green: 0.3698398471, blue: 0.9178406596, alpha: 1)
         UITabBar.appearance().unselectedItemTintColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
         tabbarController.tabBar.backgroundColor = UIColor.white

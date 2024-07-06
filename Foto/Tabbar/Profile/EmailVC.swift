@@ -97,9 +97,9 @@ class EmailVC: UIViewController {
                 let emailVC = EmailVC()
                 
                 if error == nil {
-                    let alert = UIAlertController(title: "YAY", message: "Update email thành công!", preferredStyle: .alert)
+                    let alert = UIAlertController(title: "Thông báo", message: "Cập nhật email thành công!", preferredStyle: .alert)
                     
-                    let button = UIAlertAction(title: "OK", style: .cancel, handler: {(action:UIAlertAction!) in
+                    let button = UIAlertAction(title: "Xác nhận", style: .cancel, handler: {(action:UIAlertAction!) in
                         self.dismiss(animated: true, completion: nil)
                         self.sendingUpdate(email: newEmail)
                     })
@@ -120,7 +120,7 @@ class EmailVC: UIViewController {
                     
                     let alert = UIAlertController(title: "Lỗi", message: message, preferredStyle: .alert)
                     
-                    let okAction = UIAlertAction(title: "Ok", style: .default)
+                    let okAction = UIAlertAction(title: "OK", style: .default)
                     
                     alert.addAction(okAction)
                     
@@ -133,63 +133,31 @@ class EmailVC: UIViewController {
     
     @IBAction func actionTapped(_ sender: UIButton) {
         print("Tap Tap Email")
-        let newEmail = self.emailTF.text ?? ""
-        
-        let alertController = UIAlertController(title: "Password Required", message: "You need to enter your password before changing your email.", preferredStyle: UIAlertController.Style.alert)
-        alertController.addTextField { (textField : UITextField!) -> Void in
-            textField.placeholder = "Password"
-        }
-        let saveAction = UIAlertAction(title: "Update", style: UIAlertAction.Style.default, handler: { alert -> Void in
-            let textField = alertController.textFields![0] as UITextField
-            let enteredPW = textField.text ?? ""
-            
-            self.updateUserEmail(newEmail: newEmail, password: enteredPW)
-        })
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: {
-            (action : UIAlertAction!) -> Void in })
-        
-        alertController.addAction(saveAction)
-        alertController.addAction(cancelAction)
-        
-        self.present(alertController, animated: true, completion: nil)
-                
-//        Auth.auth().currentUser?.sendEmailVerification(beforeUpdatingEmail: newEmail)
+//        let newEmail = self.emailTF.text ?? ""
 //        
-//        Auth.auth().currentUser?.updateEmail(to: newEmail) { error in
-//            let emailVC = EmailVC()
+//        let alertController = UIAlertController(title: "Password Required", message: "You need to enter your password before changing your email.", preferredStyle: UIAlertController.Style.alert)
+//        alertController.addTextField { (textField : UITextField!) -> Void in
+//            textField.placeholder = "Password"
+//        }
+//        let saveAction = UIAlertAction(title: "Update", style: UIAlertAction.Style.default, handler: { alert -> Void in
+//            let textField = alertController.textFields![0] as UITextField
+//            let enteredPW = textField.text ?? ""
 //            
-//            if error == nil {
-//                let alert = UIAlertController(title: "YAY", message: "Update email thành công!", preferredStyle: .alert)
-//                
-//                let button = UIAlertAction(title: "OK", style: .cancel, handler: {(action:UIAlertAction!) in
-//                    self.dismiss(animated: true, completion: nil)
-//                    self.sendingUpdate(email: newEmail)
-//                })
-//                alert.addAction(button)
-//                
-//                emailVC.present(alert, animated: true)
-//                
-//            } else {
-//                var message = ""
-//                switch AuthErrorCode.Code(rawValue: error!._code) {
-//                case .emailAlreadyInUse:
-//                    message = "Email đã tồn tại"
-//                case .invalidEmail:
-//                    message = "Email không hợp lệ"
-//                default:
-//                    message = error?.localizedDescription ?? ""
-//                }
-//                
-//                let alert = UIAlertController(title: "Lỗi", message: message, preferredStyle: .alert)
-//                
-//                let okAction = UIAlertAction(title: "Ok", style: .default)
-//                
-//                alert.addAction(okAction)
-//                
-//                self.present(alert, animated: true)
-//                return
-//            }
-//            
-//            return
+//            self.updateUserEmail(newEmail: newEmail, password: enteredPW)
+//        })
+//        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: {
+//            (action : UIAlertAction!) -> Void in })
+//        
+//        alertController.addAction(saveAction)
+//        alertController.addAction(cancelAction)
+//        
+//        self.present(alertController, animated: true, completion: nil)
+        
+        let alert = UIAlertController(title: "Thông báo", message: "Tính năng đang được phát triển. Xin vui lòng thử lại sau.", preferredStyle: .alert)
+        
+        let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        
+        alert.addAction(button)
+        self.present(alert, animated: true, completion: nil)
     }
 }

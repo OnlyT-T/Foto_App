@@ -1,5 +1,5 @@
 {
-  "originHash" : "8076f5b6b1a12a47119a7ea159c9ce3d7556fe53b4445637daeaf55d57588f72",
+  "originHash" : "10c0c6c19399d54bd9d62562d968b5e713d18454e154c2b88894170ddb0d437e",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -17,6 +17,15 @@
       "state" : {
         "revision" : "3e464dad87dad2d29bb29a97836789bf0f8f67d2",
         "version" : "10.18.1"
+      }
+    },
+    {
+      "identity" : "camerabutton",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/erikdrobne/CameraButton",
+      "state" : {
+        "revision" : "e3aa5f25144b877bbd75a87bb7ac1f4ac2e88048",
+        "version" : "2.0.0"
       }
     },
     {
@@ -116,15 +125,6 @@
       "state" : {
         "revision" : "65e8f29b2d63c4e38e736b25c27b83e012159be8",
         "version" : "1.25.2"
-      }
-    },
-    {
-      "identity" : "tocropviewcontroller",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/TimOliver/TOCropViewController",
-      "state" : {
-        "revision" : "a634cb7cdfd580006e79a6e74e64417fe9e9783b",
-        "version" : "2.7.4"
       }
     }
   ],

@@ -99,7 +99,7 @@ class ConnectVC: UIViewController {
             
             let messageID = self.sendingMessageID ?? ""
             
-            let alert = UIAlertController(title: "OOPS", message: "Can't find partner with the code you entered. Please enter another code.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Thông báo", message: "Không tìm thấy người đang sở hữu mã \(self.codeTF.text ?? ""). Xin hãy nhập mã khác.", preferredStyle: .alert)
             let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             
             alert.addAction(button)
@@ -166,9 +166,6 @@ class ConnectVC: UIViewController {
                     
                     showLoading(isShow: false, view: self.view)
                     
-//                    let databaseRef2 = Database.database().reference().child("response_2")
-//                    databaseRef2.child(messageId).removeValue()
-                    
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     
                     let finalVC2 = storyboard.instantiateViewController(withIdentifier: "FinalVC2") as! FinalVC2
@@ -187,17 +184,15 @@ class ConnectVC: UIViewController {
                     
                     let messageID = self.sendingMessageID ?? ""
                     
-                    let alert = UIAlertController(title: "SORRY", message: "The partner with the code you entered has just refused your request.", preferredStyle: .alert)
+                    let alert = UIAlertController(title: "Thông báo", message: "Người sỡ hữu mã \(self.codeTF.text ?? "") này đã từ chối lời mời của bạn.", preferredStyle: .alert)
                     let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                     
                     alert.addAction(button)
                     self.present(alert, animated: true, completion: nil)
                     
                     let ref = Database.database().reference().child("messages")
-//                    let databaseRef2 = Database.database().reference().child("response_2")
-                    
                     ref.child(messageID).removeValue()
-//                    databaseRef2.child(messageId).removeValue()
+                    
                 } else {
                     print("Error content")
                 }

@@ -67,12 +67,12 @@ class AvatarVC: UIViewController {
         case changeBt:
             print("Change Avatar!")
             
-            let alert = UIAlertController(title: "Foto", message: "Chọn ảnh từ", preferredStyle: .alert)
+            let alert = UIAlertController(title: "FOTO", message: "Chọn ảnh từ", preferredStyle: .alert)
             let cancel = UIAlertAction(title: "Huỷ", style: .cancel, handler: nil)
-            let camera = UIAlertAction(title: "Máy ảnh", style: .default, handler: { (_) in
+            let camera = UIAlertAction(title: "Máy Ảnh", style: .default, handler: { (_) in
                 self.fromCamera()
             })
-            let libray = UIAlertAction(title: "Thư viện", style: .default, handler: { (_) in
+            let libray = UIAlertAction(title: "Thư Viện", style: .default, handler: { (_) in
                 self.fromLibrary()
             })
             
@@ -123,7 +123,7 @@ class AvatarVC: UIViewController {
     }
     
     func confirm(message: String, viewController: UIViewController?, success: @escaping () -> Void){
-        let alert = UIAlertController(title: "My App", message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: "FOTO", message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "Ok", style: .default) { (action) in
             success()
         }

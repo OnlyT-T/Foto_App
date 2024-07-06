@@ -54,8 +54,8 @@
 		0A7F10522BB467EC008BE71D /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0A7F10512BB467EC008BE71D /* FirebaseRemoteConfigSwift */; };
 		0A7F10542BB467EC008BE71D /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 0A7F10532BB467EC008BE71D /* FirebaseStorage */; };
 		0A7F10562BB467EC008BE71D /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 0A7F10552BB467EC008BE71D /* FirebaseStorageCombine-Community */; };
-		0A83830C2BA9E15A0050AE91 /* CameraVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A83830B2BA9E15A0050AE91 /* CameraVC.xib */; };
-		0A83830D2BA9E15A0050AE91 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A83830A2BA9E15A0050AE91 /* CameraVC.swift */; };
+		0A83830C2BA9E15A0050AE91 /* PreviewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A83830B2BA9E15A0050AE91 /* PreviewVC.xib */; };
+		0A83830D2BA9E15A0050AE91 /* PreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A83830A2BA9E15A0050AE91 /* PreviewVC.swift */; };
 		0A8383102BA9E3800050AE91 /* PhotosVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A83830F2BA9E3800050AE91 /* PhotosVC.xib */; };
 		0A8383112BA9E3800050AE91 /* PhotosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A83830E2BA9E3800050AE91 /* PhotosVC.swift */; };
 		0A8383142BA9E46E0050AE91 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A8383132BA9E46E0050AE91 /* ProfileVC.xib */; };
@@ -66,8 +66,6 @@
 		0ABB19692C130F5500D92FF3 /* EditVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ABB19672C130F5500D92FF3 /* EditVC.xib */; };
 		0ABCF0DC2C2BCE79005A869B /* PartnerFotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABCF0DA2C2BCE78005A869B /* PartnerFotosCell.swift */; };
 		0ABCF0DD2C2BCE79005A869B /* PartnerFotosCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ABCF0DB2C2BCE78005A869B /* PartnerFotosCell.xib */; };
-		0ABCF0E12C2C3DD1005A869B /* CropViewController in Frameworks */ = {isa = PBXBuildFile; productRef = 0ABCF0E02C2C3DD1005A869B /* CropViewController */; };
-		0ABCF0E32C2C3DD1005A869B /* TOCropViewController in Frameworks */ = {isa = PBXBuildFile; productRef = 0ABCF0E22C2C3DD1005A869B /* TOCropViewController */; };
 		0ABDC9682C185B32003F244D /* EmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABDC9662C185B31003F244D /* EmailVC.swift */; };
 		0ABDC9692C185B32003F244D /* EmailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ABDC9672C185B31003F244D /* EmailVC.xib */; };
 		0ABDC96C2C185B44003F244D /* PasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABDC96A2C185B44003F244D /* PasswordVC.swift */; };
@@ -83,8 +81,11 @@
 		0ACD04742C27EB1A0069B43E /* Fotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD04732C27EB190069B43E /* Fotos.swift */; };
 		0ACD047B2C27ED430069B43E /* MyFotosCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ACD047A2C27ED430069B43E /* MyFotosCell.xib */; };
 		0ACD047C2C27ED430069B43E /* MyFotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD04792C27ED430069B43E /* MyFotosCell.swift */; };
-		0AD230C82C24385D00A44917 /* UploadPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD230C62C24385D00A44917 /* UploadPhotoVC.swift */; };
-		0AD230C92C24385D00A44917 /* UploadPhotoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AD230C72C24385D00A44917 /* UploadPhotoVC.xib */; };
+		0ADE09C62C371081000306AF /* AnniVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ADE09C52C371080000306AF /* AnniVC.xib */; };
+		0ADE09C72C371081000306AF /* AnniVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADE09C42C371080000306AF /* AnniVC.swift */; };
+		0ADE09CE2C37FC83000306AF /* CaptureVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ADE09CD2C37FC83000306AF /* CaptureVC.xib */; };
+		0ADE09CF2C37FC83000306AF /* CaptureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADE09CC2C37FC83000306AF /* CaptureVC.swift */; };
+		0ADE09D22C38036A000306AF /* CameraButton in Frameworks */ = {isa = PBXBuildFile; productRef = 0ADE09D12C38036A000306AF /* CameraButton */; };
 		0AEFFAF32BDBFA37003CDA99 /* GetInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEFFAF22BDBFA37003CDA99 /* GetInfo.swift */; };
 		6CF8205F02CACB059894CEDC /* Pods_Foto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C67B6E58393A485B119232 /* Pods_Foto.framework */; };
 /* End PBXBuildFile section */
@@ -112,8 +113,8 @@
 		0A4F8F682BB0838500FB7A67 /* SF-Pro-Rounded-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Semibold.otf"; sourceTree = "<group>"; };
 		0A4F8F692BB0838500FB7A67 /* SF-Pro-Rounded-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Thin.otf"; sourceTree = "<group>"; };
 		0A4F8F6A2BB0838500FB7A67 /* SF-Pro-Rounded-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Ultralight.otf"; sourceTree = "<group>"; };
-		0A83830A2BA9E15A0050AE91 /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
-		0A83830B2BA9E15A0050AE91 /* CameraVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CameraVC.xib; sourceTree = "<group>"; };
+		0A83830A2BA9E15A0050AE91 /* PreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewVC.swift; sourceTree = "<group>"; };
+		0A83830B2BA9E15A0050AE91 /* PreviewVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreviewVC.xib; sourceTree = "<group>"; };
 		0A83830E2BA9E3800050AE91 /* PhotosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosVC.swift; sourceTree = "<group>"; };
 		0A83830F2BA9E3800050AE91 /* PhotosVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotosVC.xib; sourceTree = "<group>"; };
 		0A8383122BA9E46E0050AE91 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
@@ -140,8 +141,10 @@
 		0ACD04732C27EB190069B43E /* Fotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fotos.swift; sourceTree = "<group>"; };
 		0ACD04792C27ED430069B43E /* MyFotosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFotosCell.swift; sourceTree = "<group>"; };
 		0ACD047A2C27ED430069B43E /* MyFotosCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyFotosCell.xib; sourceTree = "<group>"; };
-		0AD230C62C24385D00A44917 /* UploadPhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhotoVC.swift; sourceTree = "<group>"; };
-		0AD230C72C24385D00A44917 /* UploadPhotoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UploadPhotoVC.xib; sourceTree = "<group>"; };
+		0ADE09C42C371080000306AF /* AnniVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnniVC.swift; sourceTree = "<group>"; };
+		0ADE09C52C371080000306AF /* AnniVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnniVC.xib; sourceTree = "<group>"; };
+		0ADE09CC2C37FC83000306AF /* CaptureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureVC.swift; sourceTree = "<group>"; };
+		0ADE09CD2C37FC83000306AF /* CaptureVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CaptureVC.xib; sourceTree = "<group>"; };
 		0AEFFAF22BDBFA37003CDA99 /* GetInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInfo.swift; sourceTree = "<group>"; };
 		1AE62E22CC24193963A284C6 /* Pods-Foto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foto.debug.xcconfig"; path = "Target Support Files/Pods-Foto/Pods-Foto.debug.xcconfig"; sourceTree = "<group>"; };
 		D7C67B6E58393A485B119232 /* Pods_Foto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Foto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,11 +171,10 @@
 				0A7F10242BB467EC008BE71D /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				0A7F102A2BB467EC008BE71D /* FirebaseAppCheck in Frameworks */,
 				0A7F104E2BB467EC008BE71D /* FirebasePerformance in Frameworks */,
+				0ADE09D22C38036A000306AF /* CameraButton in Frameworks */,
 				0A7F10442BB467EC008BE71D /* FirebaseInAppMessaging-Beta in Frameworks */,
-				0ABCF0E32C2C3DD1005A869B /* TOCropViewController in Frameworks */,
 				0A7F10422BB467EC008BE71D /* FirebaseFunctionsCombine-Community in Frameworks */,
 				0A7F10322BB467EC008BE71D /* FirebaseCrashlytics in Frameworks */,
-				0ABCF0E12C2C3DD1005A869B /* CropViewController in Frameworks */,
 				0A7F10482BB467EC008BE71D /* FirebaseInstallations in Frameworks */,
 				0A7F10502BB467EC008BE71D /* FirebaseRemoteConfig in Frameworks */,
 				0A7F10542BB467EC008BE71D /* FirebaseStorage in Frameworks */,
@@ -272,6 +274,8 @@
 				0ABDC9672C185B31003F244D /* EmailVC.xib */,
 				0ABDC96A2C185B44003F244D /* PasswordVC.swift */,
 				0ABDC96B2C185B44003F244D /* PasswordVC.xib */,
+				0ADE09C42C371080000306AF /* AnniVC.swift */,
+				0ADE09C52C371080000306AF /* AnniVC.xib */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -279,10 +283,10 @@
 		0A8382F82BA759140050AE91 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
-				0A83830A2BA9E15A0050AE91 /* CameraVC.swift */,
-				0A83830B2BA9E15A0050AE91 /* CameraVC.xib */,
-				0AD230C62C24385D00A44917 /* UploadPhotoVC.swift */,
-				0AD230C72C24385D00A44917 /* UploadPhotoVC.xib */,
+				0A83830A2BA9E15A0050AE91 /* PreviewVC.swift */,
+				0A83830B2BA9E15A0050AE91 /* PreviewVC.xib */,
+				0ADE09CC2C37FC83000306AF /* CaptureVC.swift */,
+				0ADE09CD2C37FC83000306AF /* CaptureVC.xib */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -417,8 +421,7 @@
 				0A7F10512BB467EC008BE71D /* FirebaseRemoteConfigSwift */,
 				0A7F10532BB467EC008BE71D /* FirebaseStorage */,
 				0A7F10552BB467EC008BE71D /* FirebaseStorageCombine-Community */,
-				0ABCF0E02C2C3DD1005A869B /* CropViewController */,
-				0ABCF0E22C2C3DD1005A869B /* TOCropViewController */,
+				0ADE09D12C38036A000306AF /* CameraButton */,
 			);
 			productName = Foto;
 			productReference = 0A14023A2B55638D0097EFE3 /* Foto.app */;
@@ -450,7 +453,7 @@
 			mainGroup = 0A1402312B55638C0097EFE3;
 			packageReferences = (
 				0A7F10202BB467EC008BE71D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				0ABCF0DF2C2C3DCF005A869B /* XCRemoteSwiftPackageReference "TOCropViewController" */,
+				0ADE09D02C380369000306AF /* XCRemoteSwiftPackageReference "CameraButton" */,
 			);
 			productRefGroup = 0A14023B2B55638D0097EFE3 /* Products */;
 			projectDirPath = "";
@@ -469,9 +472,10 @@
 				0ACD047B2C27ED430069B43E /* MyFotosCell.xib in Resources */,
 				0AC7F8152B9CC72400F7B405 /* GoogleService-Info.plist in Resources */,
 				0A4F8F712BB0838500FB7A67 /* SF-Pro-Rounded-Regular.otf in Resources */,
+				0ADE09CE2C37FC83000306AF /* CaptureVC.xib in Resources */,
 				0A14024D2B5563920097EFE3 /* LaunchScreen.storyboard in Resources */,
 				0A4F8F732BB0838500FB7A67 /* SF-Pro-Rounded-Thin.otf in Resources */,
-				0A83830C2BA9E15A0050AE91 /* CameraVC.xib in Resources */,
+				0A83830C2BA9E15A0050AE91 /* PreviewVC.xib in Resources */,
 				0ABDC9692C185B32003F244D /* EmailVC.xib in Resources */,
 				0A4F8F702BB0838500FB7A67 /* SF-Pro-Rounded-Medium.otf in Resources */,
 				0A4F8F742BB0838500FB7A67 /* SF-Pro-Rounded-Ultralight.otf in Resources */,
@@ -486,7 +490,7 @@
 				0A4F8F6D2BB0838500FB7A67 /* SF-Pro-Rounded-Bold.otf in Resources */,
 				0ABCF0DD2C2BCE79005A869B /* PartnerFotosCell.xib in Resources */,
 				0A4F8F6C2BB0838500FB7A67 /* SF-Pro-Rounded-Black.otf in Resources */,
-				0AD230C92C24385D00A44917 /* UploadPhotoVC.xib in Resources */,
+				0ADE09C62C371081000306AF /* AnniVC.xib in Resources */,
 				0A8383102BA9E3800050AE91 /* PhotosVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -542,7 +546,6 @@
 			files = (
 				0ABB19682C130F5500D92FF3 /* EditVC.swift in Sources */,
 				0ABFDEF42B8E2C84000198A6 /* ConfirmVC.swift in Sources */,
-				0AD230C82C24385D00A44917 /* UploadPhotoVC.swift in Sources */,
 				0AB855572B91FC4C00FD995C /* AvatarVC.swift in Sources */,
 				0ABF095E2B5E749A0092C0CF /* RegisterPasswordVC.swift in Sources */,
 				0AB96F392B92DEF800DF8B77 /* FinalVC1.swift in Sources */,
@@ -552,6 +555,7 @@
 				0AC7F8172B9F58CF00F7B405 /* FinalVC2.swift in Sources */,
 				0ABFDEF22B8E2C37000198A6 /* ConnectVC.swift in Sources */,
 				0A14026A2B56E1A20097EFE3 /* WelcomeVC.swift in Sources */,
+				0ADE09C72C371081000306AF /* AnniVC.swift in Sources */,
 				0ABF095C2B5E74860092C0CF /* RegisterEmailVC.swift in Sources */,
 				0ACD04742C27EB1A0069B43E /* Fotos.swift in Sources */,
 				0AEFFAF32BDBFA37003CDA99 /* GetInfo.swift in Sources */,
@@ -561,11 +565,12 @@
 				0A1471802B5AB45E00D67F29 /* LoginEmailVC.swift in Sources */,
 				0ACD047C2C27ED430069B43E /* MyFotosCell.swift in Sources */,
 				0A1471822B5AB46D00D67F29 /* LoginPasswordVC.swift in Sources */,
-				0A83830D2BA9E15A0050AE91 /* CameraVC.swift in Sources */,
+				0A83830D2BA9E15A0050AE91 /* PreviewVC.swift in Sources */,
 				0A8383112BA9E3800050AE91 /* PhotosVC.swift in Sources */,
 				0ABF09572B5E49780092C0CF /* SetUp.swift in Sources */,
 				0A14023E2B55638D0097EFE3 /* AppDelegate.swift in Sources */,
 				0A8383152BA9E46E0050AE91 /* ProfileVC.swift in Sources */,
+				0ADE09CF2C37FC83000306AF /* CaptureVC.swift in Sources */,
 				0A1402402B55638D0097EFE3 /* SceneDelegate.swift in Sources */,
 				0ABDC9682C185B32003F244D /* EmailVC.swift in Sources */,
 			);
@@ -813,12 +818,12 @@
 				minimumVersion = 10.23.0;
 			};
 		};
-		0ABCF0DF2C2C3DCF005A869B /* XCRemoteSwiftPackageReference "TOCropViewController" */ = {
+		0ADE09D02C380369000306AF /* XCRemoteSwiftPackageReference "CameraButton" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/TimOliver/TOCropViewController";
+			repositoryURL = "https://github.com/erikdrobne/CameraButton";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.7.4;
+				minimumVersion = 2.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -959,15 +964,10 @@
 			package = 0A7F10202BB467EC008BE71D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
 		};
-		0ABCF0E02C2C3DD1005A869B /* CropViewController */ = {
+		0ADE09D12C38036A000306AF /* CameraButton */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0ABCF0DF2C2C3DCF005A869B /* XCRemoteSwiftPackageReference "TOCropViewController" */;
-			productName = CropViewController;
-		};
-		0ABCF0E22C2C3DD1005A869B /* TOCropViewController */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0ABCF0DF2C2C3DCF005A869B /* XCRemoteSwiftPackageReference "TOCropViewController" */;
-			productName = TOCropViewController;
+			package = 0ADE09D02C380369000306AF /* XCRemoteSwiftPackageReference "CameraButton" */;
+			productName = CameraButton;
 		};
 /* End XCSwiftPackageProductDependency section */
 

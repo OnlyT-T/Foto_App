@@ -61,15 +61,15 @@
                                     </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ug-yn-kgl">
-                                    <rect key="frame" x="116.66666666666669" y="566" width="160" height="30"/>
+                                    <rect key="frame" x="141.66666666666666" y="566" width="110" height="30"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="160" id="1lO-eS-NOS"/>
+                                        <constraint firstAttribute="width" constant="110" id="1lO-eS-NOS"/>
                                         <constraint firstAttribute="height" constant="30" id="353-2r-z1a"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" title="Edit Profile Picture">
+                                    <state key="normal" title="Chọn Ảnh">
                                         <color key="titleColor" red="0.40784313729999999" green="0.4431372549" blue="0.81960784310000001" alpha="0.94999999999999996" colorSpace="custom" customColorSpace="displayP3"/>
                                     </state>
                                     <connections>
@@ -88,7 +88,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="91t-hf-39Y">
                                             <rect key="frame" x="0.0" y="26" width="361" height="54"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Nickname" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2pD-sU-zhB">
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nickname" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2pD-sU-zhB">
                                                     <rect key="frame" x="2" y="2" width="357" height="50"/>
                                                     <color key="backgroundColor" red="0.40784313729999999" green="0.4431372549" blue="0.81960784310000001" alpha="0.94999999999999996" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -126,7 +126,7 @@
                                     </constraints>
                                     <fontDescription key="fontDescription" name="SFProRounded-Bold" family="SF Pro Rounded" pointSize="16"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" title="Confirm">
+                                    <state key="normal" title="Xác nhận">
                                         <color key="titleColor" red="0.40784313729999999" green="0.4431372549" blue="0.81960784310000001" alpha="0.94999999999999996" colorSpace="custom" customColorSpace="displayP3"/>
                                     </state>
                                     <connections>

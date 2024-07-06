@@ -40,6 +40,7 @@ class PhotosVC: UIViewController {
         setUp()
         getPartnerInfo(name: partnerName, avatar: avatarImage, view: view)
         getConvoID(id: convoIdLb)
+        getAnniDate(date: anniversaryDate)
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -51,6 +52,11 @@ class PhotosVC: UIViewController {
         
         fetchData()
         setLayout()
+        
+        Timer.scheduledTimer(withTimeInterval: 60.0, repeats: true) { timer in
+            self.collectionView.reloadData()
+            print("Update Time")
+        }
     }
     
     private func fetchData() {
@@ -89,12 +95,34 @@ class PhotosVC: UIViewController {
         avatarView.layer.borderWidth = 2
         avatarView.layer.borderColor = #colorLiteral(red: 0.4453556538, green: 0.3677338362, blue: 0.9179279208, alpha: 0.5035613609)
     }
+    
+    private func timeAgo(from timeInterval: TimeInterval) -> String {
+        let date = Date(timeIntervalSince1970: timeInterval)
+        let now = Date()
+        let components = Calendar.current.dateComponents([.year, .month, .weekOfYear, .day, .hour, .minute, .second], from: date, to: now)
+        
+        if let years = components.year, years > 0 {
+            return "\(years)y ago"
+        } else if let months = components.month, months > 0 {
+            return "\(months)mth ago"
+        } else if let weeks = components.weekOfYear, weeks > 0 {
+            return "\(weeks)w ago"
+        } else if let days = components.day, days > 0 {
+            return "\(days)d ago"
+        } else if let hours = components.hour, hours > 0 {
+            return "\(hours)h ago"
+        } else if let minutes = components.minute, minutes > 0 {
+            return "\(minutes)m ago"
+        } else {
+            return "Just now"
+        }
+    }
 }
 
 extension PhotosVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let latestFotosCount: Int = fotos.count
-        self.fotosLb.text = "\(latestFotosCount) SHARED FOTOS"
+        self.fotosLb.text = "\(latestFotosCount) BỨC FOTOS"
         return fotos.count
     }
     
@@ -106,8 +134,12 @@ extension PhotosVC: UICollectionViewDelegate, UICollectionViewDataSource {
         let uid = Auth.auth().currentUser?.uid ?? ""
 
         if foto.id == uid {
+            let timestamp = foto.date
+            let timeAgo = timeAgo(from: timestamp)
+//            let timeAgo: String = dateAgo.timeAgoSinceDate()
+            
             myCell.captionLb.text = foto.caption
-            myCell.dateLb.text = foto.date
+            myCell.dateLb.text = timeAgo
             if foto.interact == "True" {
                 print("Get Liked")
                 myCell.interactImage.image = UIImage(named: "Like")
@@ -145,9 +177,12 @@ extension PhotosVC: UICollectionViewDelegate, UICollectionViewDataSource {
             
         } else {
             print("Not My Cell")
+            let timestamp = foto.date
+            let timeAgo = timeAgo(from: timestamp)
+//            let timeAgo: String = dateAgo.timeAgoSinceDate()
             
             partnerCell.captionLb.text = foto.caption
-            partnerCell.dateLb.text = foto.date
+            partnerCell.dateLb.text = timeAgo
             partnerCell.partnerNameLb.text = self.partnerName.text
             partnerCell.fotoIdLb.text = foto.fotoId
             
@@ -188,5 +223,50 @@ extension PhotosVC: UICollectionViewDelegate, UICollectionViewDataSource {
             }
             return partnerCell
         }
+    }
+}
+
+extension Date {
+    
+    func timeAgoSinceDate() -> String {
+        
+        // From Time
+        let fromDate = self
+        
+        // To Time
+        let toDate = Date()
+        
+        // Estimation
+        // Year
+        if let interval = Calendar.current.dateComponents([.year], from: fromDate, to: toDate).year, interval > 0  {
+            
+            return interval == 1 ? "\(interval)" + " " + "year ago" : "\(interval)" + " " + "years ago"
+        }
+        
+        // Month
+        if let interval = Calendar.current.dateComponents([.month], from: fromDate, to: toDate).month, interval > 0  {
+            
+            return interval == 1 ? "\(interval)" + " " + "month ago" : "\(interval)" + " " + "months ago"
+        }
+        
+        // Day
+        if let interval = Calendar.current.dateComponents([.day], from: fromDate, to: toDate).day, interval > 0  {
+            
+            return interval == 1 ? "\(interval)" + " " + "day ago" : "\(interval)" + " " + "days ago"
+        }
+        
+        // Hours
+        if let interval = Calendar.current.dateComponents([.hour], from: fromDate, to: toDate).hour, interval > 0 {
+            
+            return interval == 1 ? "\(interval)" + " " + "hour ago" : "\(interval)" + " " + "hours ago"
+        }
+        
+        // Minute
+        if let interval = Calendar.current.dateComponents([.minute], from: fromDate, to: toDate).minute, interval > 0 {
+
+            return interval == 1 ? "\(interval)" + " " + "minute ago" : "\(interval)" + " " + "minutes ago"
+        }
+
+        return "Just now"
     }
 }

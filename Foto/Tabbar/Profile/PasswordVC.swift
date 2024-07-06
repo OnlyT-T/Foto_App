@@ -50,6 +50,13 @@ class PasswordVC: UIViewController {
     
     @IBAction func actionTapped(_ sender: UIButton) {
         print("Tap Tap Password")
+        
+        let alert = UIAlertController(title: "Thông báo", message: "Tính năng đang được phát triển. Xin vui lòng thử lại sau.", preferredStyle: .alert)
+        
+        let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        
+        alert.addAction(button)
+        self.present(alert, animated: true, completion: nil)
     }
     
 }

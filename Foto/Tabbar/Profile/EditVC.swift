@@ -80,7 +80,7 @@ class EditVC: UIViewController {
     private func updateProcess() {
         let nickname = nicknameTF.text ?? ""
         if nickname == "" {
-            let alert = UIAlertController(title: "OOPS", message: "Your name must contain characters.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Lỗi", message: "Bạn cần phải nhập tên.", preferredStyle: .alert)
             
             let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             
@@ -150,9 +150,9 @@ class EditVC: UIViewController {
     }
     
     private func backToProfile() {
-        let alert = UIAlertController(title: "YAY", message: "Successfully changed your nickname and avatar!", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Thông báo", message: "Đã thay đổi ảnh đại diện và nickname thành công!", preferredStyle: .alert)
         
-        let button = UIAlertAction(title: "OK", style: .cancel, handler: {(action:UIAlertAction!) in
+        let button = UIAlertAction(title: "Xác nhận", style: .cancel, handler: {(action:UIAlertAction!) in
             self.dismiss(animated: true, completion: nil)
             self.sendingUpdate()
         })
@@ -186,8 +186,8 @@ class EditVC: UIViewController {
     }
     
     func confirm(message: String, viewController: UIViewController?, success: @escaping () -> Void){
-        let alert = UIAlertController(title: "My App", message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Ok", style: .default) { (action) in
+        let alert = UIAlertController(title: "FOTO", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Xác nhận", style: .default) { (action) in
             success()
         }
         alert.addAction(action)

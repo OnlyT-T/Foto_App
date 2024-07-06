@@ -36,8 +36,8 @@
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trash.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7uK-oZ-VdZ">
-                                        <rect key="frame" x="8" y="39.333333333333329" width="200" height="200.33333333333331"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7uK-oZ-VdZ">
+                                        <rect key="frame" x="8" y="40" width="200" height="200"/>
                                         <color key="tintColor" red="0.43137254899999999" green="0.37254901959999998" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="7uK-oZ-VdZ" secondAttribute="height" id="Rjp-cW-k7o"/>
@@ -116,6 +116,5 @@
     </objects>
     <resources>
         <image name="Unlike" width="24" height="24"/>
-        <image name="trash.fill" catalog="system" width="117" height="128"/>
     </resources>
 </document>

@@ -108,7 +108,7 @@ class FinalVC2: UIViewController {
                                       "image name": "WelcomeImage.jpg",
                                       "time sent": date,
                                       "foto id": messageId,
-                                      "timestamp": ServerValue.timestamp()]
+                                      "timestamp": Date().timeIntervalSince1970]
         
         databaseRef.child(conversationId).child(messageId).setValue(message)
         
@@ -132,7 +132,8 @@ class FinalVC2: UIViewController {
             "Partner's nickname": partnerName,
             "Partner's user ID": partnerId,
             "My Fotos Count": fotoCount,
-            "Conversation ID": conversationId
+            "Conversation ID": conversationId,
+            "Anniversary": "01/01/2000"
         ]
         
         let docRef = db.collection("user").document(uid)
@@ -153,9 +154,9 @@ class FinalVC2: UIViewController {
         photosVC.tabBarItem = UITabBarItem(title: "Photos", image: UIImage(named: "Photos(Unselected)"), selectedImage: UIImage(named: "Photos(Selected)"))
         
         //Camera
-        let cameraVC = CameraVC()
-        let cameraNavi = UINavigationController(rootViewController: cameraVC)
-        cameraVC.tabBarItem = UITabBarItem(title: "Camera", image: UIImage(named: "Camera(Unselected)"), selectedImage: UIImage(named: "Camera(Selected)"))
+        let previewVC = PreviewVC()
+        let previewNavi = UINavigationController(rootViewController: previewVC)
+        previewVC.tabBarItem = UITabBarItem(title: "Camera", image: UIImage(named: "Camera(Unselected)"), selectedImage: UIImage(named: "Camera(Selected)"))
         
         //Profile
         let profileVC = ProfileVC()
@@ -166,7 +167,7 @@ class FinalVC2: UIViewController {
         
         //tabbar controller
         let tabbarController = UITabBarController()
-        tabbarController.viewControllers = [photosNavi, cameraNavi, profileNavi]
+        tabbarController.viewControllers = [photosNavi, previewNavi, profileNavi]
         tabbarController.tabBar.tintColor = #colorLiteral(red: 0.4432783723, green: 0.3698398471, blue: 0.9178406596, alpha: 1)
         tabbarController.tabBar.backgroundColor = UIColor.white
         let lineView = UIView(frame: CGRect(x: 0, y: -16, width: tabbarController.tabBar.frame.size.width, height: 16))
